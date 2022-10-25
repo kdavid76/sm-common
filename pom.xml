@@ -6,47 +6,46 @@
 
 	<parent>
 		<groupId>com.sportmanagement.bkk</groupId>
-		<artifactId>sm-server-parent</artifactId>
+		<artifactId>sm-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<artifactId>sm-common</artifactId>
+	<artifactId>sm-common-common</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sm-common</name>
 	<description>Common components for BKK Sports Management application</description>
 
 	<properties>
-		<java.version>17</java.version>
 	</properties>
-
-	<modules>
-		<module>sm-mongo</module>
-		<module>sm-resources</module>
-	</modules>
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-test</artifactId>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>io.projectreactor</groupId>
-				<artifactId>reactor-test</artifactId>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework.security</groupId>
-				<artifactId>spring-security-test</artifactId>
-				<scope>test</scope>
-			</dependency>
 		</dependencies>
-
 	</dependencyManagement>
 
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jetbrains.kotlin</groupId>
+				<artifactId>kotlin-maven-plugin</artifactId>
+				<version>${kotlin.version}</version>
+				<configuration>
+					<args>
+						<arg>-Xjsr305=strict</arg>
+					</args>
+					<compilerPlugins>
+						<plugin>spring</plugin>
+					</compilerPlugins>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-allopen</artifactId>
+						<version>${kotlin.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
 </project>
