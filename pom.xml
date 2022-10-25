@@ -11,7 +11,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<artifactId>sm-common</artifactId>
+	<artifactId>sm-common-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sm-common</name>
 	<description>Common components for BKK Sports Management application</description>
@@ -22,8 +22,7 @@
 	</properties>
 
 	<modules>
-		<module>sm-mongo</module>
-		<module>sm-resources</module>
+		<module>validation</module>
 	</modules>
 
 	<dependencies>
