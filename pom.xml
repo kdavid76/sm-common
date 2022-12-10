@@ -11,18 +11,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<artifactId>sm-common-common</artifactId>
+	<artifactId>sm-common</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sm-common</name>
 	<description>Common components for BKK Sports Management application</description>
 
-	<properties>
-	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-		</dependencies>
-	</dependencyManagement>
+	<modules>
+		<module>model</module>
+	</modules>
 
 	<build>
 		<plugins>
