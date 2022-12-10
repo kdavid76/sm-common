@@ -4,7 +4,7 @@ import com.bkk.sm.common.customer.company.CompanyRole
 import com.bkk.sm.common.model.AreaType
 import com.bkk.sm.common.model.Roles
 import com.bkk.sm.common.utils.TestUtils
-import com.bkk.sm.mongo.customers.resources.CompanyWithAdminResource
+import com.bkk.sm.common.customer.resources.CompanyWithAdminResource
 import io.kotest.matchers.shouldBe
 import io.mockk.called
 import io.mockk.clearMocks

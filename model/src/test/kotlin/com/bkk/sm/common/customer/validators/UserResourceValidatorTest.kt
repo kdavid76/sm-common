@@ -2,7 +2,7 @@ package com.bkk.sm.common.customer.validators
 
 import com.bkk.sm.common.customer.company.CompanyRole
 import com.bkk.sm.common.model.Roles
-import com.bkk.sm.mongo.customers.resources.UserResource
+import com.bkk.sm.common.customer.resources.UserResource
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.test.context.ActiveProfiles

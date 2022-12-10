@@ -1,6 +1,6 @@
 package com.bkk.sm.common.customer.validators
 
-import com.bkk.sm.mongo.customers.resources.UserResource
+import com.bkk.sm.common.customer.resources.UserResource
 import org.springframework.stereotype.Component
 import org.springframework.validation.Errors
 import org.springframework.validation.ValidationUtils

@@ -3,8 +3,8 @@ package com.bkk.sm.common.utils
 import com.bkk.sm.common.customer.company.CompanyRole
 import com.bkk.sm.common.model.Address
 import com.bkk.sm.common.model.AreaType
-import com.bkk.sm.mongo.customers.resources.CompanyResource
-import com.bkk.sm.mongo.customers.resources.UserResource
+import com.bkk.sm.common.customer.resources.CompanyResource
+import com.bkk.sm.common.customer.resources.UserResource
 import java.time.LocalDateTime
 
 class TestUtils {

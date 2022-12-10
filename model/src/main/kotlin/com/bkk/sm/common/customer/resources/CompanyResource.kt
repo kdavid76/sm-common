@@ -1,4 +1,4 @@
-package com.bkk.sm.mongo.customers.resources
+package com.bkk.sm.common.customer.resources
 
 import com.bkk.sm.common.model.Address
 import java.time.LocalDateTime

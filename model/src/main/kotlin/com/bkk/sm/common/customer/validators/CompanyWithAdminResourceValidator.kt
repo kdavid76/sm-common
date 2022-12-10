@@ -1,6 +1,6 @@
 package com.bkk.sm.common.customer.validators
 
-import com.bkk.sm.mongo.customers.resources.CompanyWithAdminResource
+import com.bkk.sm.common.customer.resources.CompanyWithAdminResource
 import org.springframework.stereotype.Component
 import org.springframework.validation.BeanPropertyBindingResult
 import org.springframework.validation.Errors

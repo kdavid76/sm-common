@@ -2,7 +2,7 @@ package com.bkk.sm.common.customer.validators
 
 import com.bkk.sm.common.model.Address
 import com.bkk.sm.common.model.AreaType
-import com.bkk.sm.mongo.customers.resources.CompanyResource
+import com.bkk.sm.common.customer.resources.CompanyResource
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.test.context.ActiveProfiles

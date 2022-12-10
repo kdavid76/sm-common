@@ -1,4 +1,4 @@
-package com.bkk.sm.mongo.customers.resources
+package com.bkk.sm.common.customer.resources
 
 import com.bkk.sm.common.customer.company.CompanyRole
 import java.util.*
