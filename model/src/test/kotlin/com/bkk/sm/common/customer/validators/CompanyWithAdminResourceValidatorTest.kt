@@ -3,7 +3,7 @@ package com.bkk.sm.common.customer.validators
 import com.bkk.sm.common.customer.company.CompanyRole
 import com.bkk.sm.common.model.AreaType
 import com.bkk.sm.common.model.Roles
-import com.bkk.sm.common.utils.TestUtils
+import com.bkk.sm.common.utils.CommonResourceTestUtils
 import com.bkk.sm.common.customer.resources.CompanyWithAdminResource
 import io.kotest.matchers.shouldBe
 import io.mockk.called
@@ -24,14 +24,14 @@ class CompanyWithAdminResourceValidatorTest {
     private val userResourceValidatorMock = mockk<UserResourceValidator>()
     private val validator = CompanyWithAdminResourceValidator(companyResourceValidatorMock, userResourceValidatorMock)
 
-    private val bkk = TestUtils.createCompanyResource(
+    private val bkk = CommonResourceTestUtils.createCompanyResource(
         UUID.randomUUID().toString(), "bkk", "Beszterce KK",
         "besztercekk@email.com", "12345678-1-11", "11111111-22222222-33333333",
         "", LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), true,
-        1, TestUtils.createAddress("Salgotarjan", 3100, "Medves", AreaType.KORUT,
+        1, CommonResourceTestUtils.createAddress("Salgotarjan", 3100, "Medves", AreaType.KORUT,
             "86", 7, 40, null)
     )
-    private val davidk = TestUtils.createUserResource("1", "davidk", "password",
+    private val davidk = CommonResourceTestUtils.createUserResource("1", "davidk", "password",
                             "Krisztian", "David", "davidkrisztian@email.com",
                             mutableListOf(CompanyRole(Roles.ROLE_ADMIN, "bkk")))
     @BeforeEach

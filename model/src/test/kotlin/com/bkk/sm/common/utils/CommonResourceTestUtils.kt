@@ -7,23 +7,9 @@ import com.bkk.sm.common.customer.resources.CompanyResource
 import com.bkk.sm.common.customer.resources.UserResource
 import java.time.LocalDateTime
 
-class TestUtils {
+class CommonResourceTestUtils {
 
     companion object {
-        /*
-        fun createUserProfile(
-            id: String,
-            username: String,
-            firstName: String,
-            lastName: String,
-            email: String,
-            roles: MutableList<CompanyRole>?
-        ) = UserProfile(
-            id = id, username = username, firstName = firstName, lastName = lastName,
-            email = email, roles = roles
-        )
-         */
-
         fun createUserResource(
             id: String,
             username: String,
@@ -72,28 +58,5 @@ class TestUtils {
             lastModificationTime = lastModificationTime, enabled = enabled,
             version = version, address = address
         )
-/*
-        fun createCompany(
-            id: String?,
-            code: String,
-            name: String,
-            email: String,
-            taxId: String?,
-            bankAccountNumber: String?,
-            activationToken: String?,
-            activationTime: LocalDateTime?,
-            registrationTime: LocalDateTime?,
-            lastModificationTime: LocalDateTime?,
-            enabled: Boolean?,
-            version: Long,
-            address: Address
-        ) = Company(
-            id = id, code = code, name = name, email = email, taxId = taxId,
-            bankAccountNumber = bankAccountNumber, activationToken = activationToken,
-            activationTime = activationTime, registrationTime = registrationTime,
-            lastModificationTime = lastModificationTime, enabled = enabled,
-            version = version, address = address
-        )
- */
     }
 }
