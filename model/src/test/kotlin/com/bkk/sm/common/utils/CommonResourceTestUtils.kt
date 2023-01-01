@@ -1,10 +1,10 @@
 package com.bkk.sm.common.utils
 
 import com.bkk.sm.common.customer.company.CompanyRole
-import com.bkk.sm.common.model.Address
-import com.bkk.sm.common.model.AreaType
 import com.bkk.sm.common.customer.resources.CompanyResource
 import com.bkk.sm.common.customer.resources.UserResource
+import com.bkk.sm.common.model.Address
+import com.bkk.sm.common.model.AreaType
 import java.time.LocalDateTime
 
 class CommonResourceTestUtils {
@@ -19,22 +19,33 @@ class CommonResourceTestUtils {
             email: String,
             roles: MutableList<CompanyRole>
         ) = UserResource(
-            id = id, username = username, password = password, firstName = firstName,
-            lastName = lastName, email = email, roles = roles
+            id = id,
+            username = username,
+            password = password,
+            firstName = firstName,
+            lastName = lastName,
+            email = email,
+            roles = roles
         )
 
         fun createAddress(
-                city: String,
-                postCode: Int,
-                streetName: String,
-                areaType: AreaType,
-                houseNumber: String,
-                level: Int?,
-                door: Int?,
-                locationCode: String?
+            city: String,
+            postCode: Int,
+            streetName: String,
+            areaType: AreaType,
+            houseNumber: String,
+            level: Int?,
+            door: Int?,
+            locationCode: String?
         ) = Address(
-            city = city, postCode = postCode, streetName = streetName, areaType = areaType,
-            houseNumber = houseNumber, level = level, door = door, locationCode = locationCode
+            city = city,
+            postCode = postCode,
+            streetName = streetName,
+            areaType = areaType,
+            houseNumber = houseNumber,
+            level = level,
+            door = door,
+            locationCode = locationCode
         )
 
         fun createCompanyResource(

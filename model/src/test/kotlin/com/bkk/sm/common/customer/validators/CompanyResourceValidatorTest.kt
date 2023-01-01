@@ -1,8 +1,8 @@
 package com.bkk.sm.common.customer.validators
 
+import com.bkk.sm.common.customer.resources.CompanyResource
 import com.bkk.sm.common.model.Address
 import com.bkk.sm.common.model.AreaType
-import com.bkk.sm.common.customer.resources.CompanyResource
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.test.context.ActiveProfiles
@@ -24,11 +24,22 @@ class CompanyResourceValidatorTest {
     @Test
     fun `Verifying valid resource`() {
         val companyResource = CompanyResource(
-            id = "123456789", name = "Beszterce KK", code = "bkk", email = "bkk@gmail.com",
+            id = "123456789",
+            name = "Beszterce KK",
+            code = "bkk",
+            email = "bkk@gmail.com",
             address = Address(
-                postCode = 3100, city = "Salgotarjan", areaType = AreaType.KORUT, streetName = "Medves",
-                houseNumber = "86", level = 7, door = 40, locationCode = null
-            ), activationTime = LocalDateTime.now(), registrationTime = LocalDateTime.now(),
+                postCode = 3100,
+                city = "Salgotarjan",
+                areaType = AreaType.KORUT,
+                streetName = "Medves",
+                houseNumber = "86",
+                level = 7,
+                door = 40,
+                locationCode = null
+            ),
+            activationTime = LocalDateTime.now(),
+            registrationTime = LocalDateTime.now(),
             lastModificationTime = LocalDateTime.now()
         )
 
@@ -41,11 +52,22 @@ class CompanyResourceValidatorTest {
     @Test
     fun `Verifying invalid resource`() {
         val companyResource = CompanyResource(
-            id = "123456789", name = " ", code = " ", email = "bkkgmail.com",
+            id = "123456789",
+            name = " ",
+            code = " ",
+            email = "bkkgmail.com",
             address = Address(
-                    postCode = 0, city = " ", areaType = AreaType.KORUT, streetName = " ",
-                    houseNumber = " ", level = null, door = null, locationCode = null
-            ), activationTime = LocalDateTime.now(), registrationTime = LocalDateTime.now(),
+                postCode = 0,
+                city = " ",
+                areaType = AreaType.KORUT,
+                streetName = " ",
+                houseNumber = " ",
+                level = null,
+                door = null,
+                locationCode = null
+            ),
+            activationTime = LocalDateTime.now(),
+            registrationTime = LocalDateTime.now(),
             lastModificationTime = LocalDateTime.now()
         )
 

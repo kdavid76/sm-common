@@ -33,16 +33,16 @@ class CompanyResourceValidator : Validator {
             "errors.company.resource.address.streetName.required"
         )
         ValidationUtils.rejectIfEmptyOrWhitespace(
-                errors,
-                "address.houseNumber",
-                "errors.company.resource.address.houseNumber.required"
+            errors,
+            "address.houseNumber",
+            "errors.company.resource.address.houseNumber.required"
         )
 
         val company = target as CompanyResource
 
         // Email address must be in the right format
         val emailMatcher = UserResourceValidator.EMAIL_PATTERN.matcher(company.email)
-        if (! emailMatcher.matches()) {
+        if (!emailMatcher.matches()) {
             errors.rejectValue("email", "errors.user.resource.email.format")
         }
     }
