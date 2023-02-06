@@ -6,6 +6,18 @@ pipeline  {
         git 'default'
     }
     stages {
+        stage('Example') {
+            steps {
+                sh '''
+                    env | grep -e PATH -e JAVA_HOME
+                    which java
+                    java -version
+                    mvn -version
+                    git --version
+                    ls -la /home/jenkins/.m2
+                '''
+            }
+        }
 
         stage('Checkout') {
             steps {
@@ -25,19 +37,6 @@ pipeline  {
             steps {
                 sh '''
                     mvn test
-                '''
-            }
-        }
-
-        stage('Example') {
-            steps {
-                sh '''
-                    env | grep -e PATH -e JAVA_HOME
-                    which java
-                    java -version
-                    mvn -version
-                    git --version
-                    ls -la /home/jenkins/.m2
                 '''
             }
         }
