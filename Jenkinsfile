@@ -21,7 +21,7 @@ pipeline  {
 
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GithubKey', url: 'git@github.com:kdavid76/sm-common.git']])
+                checkout scmGit(branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[credentialsId: 'GithubKey', url: 'git@github.com:kdavid76/sm-common.git']])
             }
         }
 
