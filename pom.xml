@@ -17,7 +17,7 @@
 	<description>Common components for BKK Sports Management application</description>
 
 	<modules>
-		<module>model</module>
+		<module>sm-common-models</module>
 	</modules>
 
 	<build>

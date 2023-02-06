@@ -10,10 +10,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sm-common-models</name>
     <description>Common model objects for BKK Sports Management application</description>
 
-    <artifactId>common-models</artifactId>
+    <artifactId>sm-common-models</artifactId>
 
     <dependencies>
         <dependency>
