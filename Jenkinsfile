@@ -5,6 +5,7 @@ pipeline  {
         maven 'mvn-3.8.7'
         git 'default'
     }
+
     stages {
         stage('Example') {
             steps {
