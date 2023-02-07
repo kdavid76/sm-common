@@ -33,6 +33,14 @@ pipeline  {
             }
         }
 
+        stage('Static style check') {
+            steps {
+                sh '''
+                    mvn ktlint:check
+                '''
+            }
+        }
+
         stage('Test') {
             steps {
                 sh '''

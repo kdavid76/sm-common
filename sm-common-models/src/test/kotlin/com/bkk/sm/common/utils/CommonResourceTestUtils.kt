@@ -17,7 +17,7 @@ class CommonResourceTestUtils {
             firstName: String,
             lastName: String,
             email: String,
-            roles: MutableList<CompanyRole>
+            roles: MutableList<CompanyRole>,
         ) = UserResource(
             id = id,
             username = username,
@@ -25,7 +25,7 @@ class CommonResourceTestUtils {
             firstName = firstName,
             lastName = lastName,
             email = email,
-            roles = roles
+            roles = roles,
         )
 
         fun createAddress(
@@ -36,7 +36,7 @@ class CommonResourceTestUtils {
             houseNumber: String,
             level: Int?,
             door: Int?,
-            locationCode: String?
+            locationCode: String?,
         ) = Address(
             city = city,
             postCode = postCode,
@@ -45,7 +45,7 @@ class CommonResourceTestUtils {
             houseNumber = houseNumber,
             level = level,
             door = door,
-            locationCode = locationCode
+            locationCode = locationCode,
         )
 
         fun createCompanyResource(
@@ -61,13 +61,13 @@ class CommonResourceTestUtils {
             lastModificationTime: LocalDateTime?,
             enabled: Boolean?,
             version: Long,
-            address: Address
+            address: Address,
         ) = CompanyResource(
             id = id, code = code, name = name, email = email, taxId = taxId,
             bankAccountNumber = bankAccountNumber, activationToken = activationToken,
             activationTime = activationTime, registrationTime = registrationTime,
             lastModificationTime = lastModificationTime, enabled = enabled,
-            version = version, address = address
+            version = version, address = address,
         )
     }
 }

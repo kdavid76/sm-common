@@ -109,6 +109,30 @@
             <plugin>
                 <groupId>com.github.gantsign.maven</groupId>
                 <artifactId>ktlint-maven-plugin</artifactId>
+                <version>${klint.version}</version>
+                <executions>
+                    <execution>
+                        <id>reporter</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <failOnViolation>false</failOnViolation>
+                            <reporters>
+                                <reporter>
+                                    <name>json</name>
+                                    <output>${project.build.directory}/ktlint.txt</output>
+                                    <properties>
+                                        <property>
+                                            <name>group_by_file</name>
+                                            <value>true</value>
+                                        </property>
+                                    </properties>
+                                </reporter>
+                            </reporters>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
