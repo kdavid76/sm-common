@@ -17,5 +17,5 @@ data class CompanyResource(
     var registrationTime: LocalDateTime?,
     var lastModificationTime: LocalDateTime?,
     var enabled: Boolean? = false,
-    var version: Long = 0,
+    var version: Long = 0
 )
