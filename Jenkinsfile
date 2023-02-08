@@ -24,7 +24,7 @@ pipeline  {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: env.BRANCH_NAME]],
-                    userRemoteConfigs: [[url: 'https://${env.GITHUB_APIKEY}@github.com/kdavid76/sm-common.git']]
+                    userRemoteConfigs: [[url: 'https://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@github.com/kdavid76/sm-common.git']]
                 ])
             }
         }
