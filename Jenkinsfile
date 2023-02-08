@@ -1,7 +1,9 @@
-def githubPath = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
 
 pipeline  {
     agent { label 'kubeagent' }
+    environment {
+        GITHUB_PATH = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
+    }
     tools {
         jdk 'oracle-jdk-17'
         maven 'mvn-3.8.7'
@@ -34,7 +36,7 @@ pipeline  {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: env.BRANCH_NAME]],
-                    userRemoteConfigs: [[url: githubPath]]
+                    userRemoteConfigs: [[url: env.GITHUB_PATH]]
                 ])
             }
         }
