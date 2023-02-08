@@ -1,3 +1,5 @@
+def githubPath = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
+
 pipeline  {
     agent { label 'kubeagent' }
     tools {
@@ -29,7 +31,6 @@ pipeline  {
 
         stage('Checkout') {
             steps {
-                def githubPath = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: env.BRANCH_NAME]],
