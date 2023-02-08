@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.sportmanagement.bkk</groupId>
 		<artifactId>sm-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -17,7 +17,7 @@
 	<description>Common components for BKK Sports Management application</description>
 
 	<modules>
-		<module>model</module>
+		<module>sm-common-models</module>
 	</modules>
 
 	<build>
@@ -50,7 +50,6 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
 		<plugins>
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
