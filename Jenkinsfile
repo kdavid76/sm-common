@@ -33,7 +33,7 @@ pipeline  {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: env.BRANCH_NAME]],
-                    userRemoteConfigs: [[url: githubPath]
+                    userRemoteConfigs: [[url: githubPath]]
                 ])
             }
         }
