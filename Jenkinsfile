@@ -29,7 +29,7 @@ pipeline  {
 
         stage('Checkout') {
             steps {
-                var githubPath = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
+                def githubPath = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: env.BRANCH_NAME]],
