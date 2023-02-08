@@ -2,7 +2,7 @@
 pipeline  {
     agent { label 'kubeagent' }
     environment {
-        GITHUB_PATH = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
+        GITHUB_PATH = "https://${env.GITHUB_APIKEY}@github.com/kdavid76/sm-common.git"
     }
     tools {
         jdk 'oracle-jdk-17'
