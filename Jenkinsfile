@@ -19,12 +19,21 @@ pipeline  {
             }
         }
 
+        stage('Environment variables') {
+            steps {
+                sh '''
+                    printenv
+                '''
+            }
+        }
+
         stage('Checkout') {
             steps {
+                var githubPath = "https://" + env.GITHUB_APIKEY + "@github.com/kdavid76/sm-common.git"
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: env.BRANCH_NAME]],
-                    userRemoteConfigs: [[url: 'https://\\${env.GITHUB_APIKEY}@github.com/kdavid76/sm-common.git']]
+                    userRemoteConfigs: [[url: githubPath]
                 ])
             }
         }
