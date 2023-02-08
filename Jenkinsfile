@@ -48,7 +48,7 @@ pipeline  {
             }
             steps {
                 sh '''
-                    mvn -b release:prepare release:perform release:clean
+                    mvn release:prepare release:perform release:clean
                 '''
             }
         }
