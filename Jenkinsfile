@@ -42,6 +42,17 @@ pipeline  {
             }
         }
 
+        stage('Release') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh '''
+                    mvn -b release:prepare release:perform release:clean
+                '''
+            }
+        }
+
         stage('Build') {
             steps {
                 sh '''
@@ -66,21 +77,10 @@ pipeline  {
             }
         }
 
-        stage('Deploy SNAPSHOT to repository') {
+        stage('Deploy to repository') {
             steps {
                 sh '''
                     mvn deploy
-                '''
-            }
-        }
-
-        stage('Release') {
-            when {
-                branch 'master'
-            }
-            steps {
-                sh '''
-                    mvn -b release:prepare release:perform release:clean
                 '''
             }
         }
