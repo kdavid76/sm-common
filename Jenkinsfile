@@ -10,6 +10,7 @@ pipeline  {
         git 'default'
     }
     stages {
+    /*
         stage('Example') {
             steps {
                 sh '''
@@ -22,7 +23,6 @@ pipeline  {
                 '''
             }
         }
-
         stage('Environment variables') {
             steps {
                 sh '''
@@ -30,6 +30,7 @@ pipeline  {
                 '''
             }
         }
+        */
 
         stage('Checkout') {
             steps {
@@ -61,6 +62,25 @@ pipeline  {
             steps {
                 sh '''
                     mvn test
+                '''
+            }
+        }
+
+        stage('Deploy SNAPSHOT to repository') {
+            steps {
+                sh '''
+                    mvn deploy
+                '''
+            }
+        }
+
+        stage('Release') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh '''
+                    mvn -b release:prepare release:perform release:clean
                 '''
             }
         }
