@@ -48,6 +48,8 @@ pipeline  {
             }
             steps {
                 sh '''
+                    git config --global user.email "mikehammer1902@gmail.com"
+                    git config --global user.name "Krisztian David"
                     mvn release:prepare release:perform release:clean
                 '''
             }
