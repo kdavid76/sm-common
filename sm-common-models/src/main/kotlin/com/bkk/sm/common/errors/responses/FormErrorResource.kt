@@ -5,13 +5,13 @@ import org.springframework.validation.FieldError
 
 data class FormErrorResource(
     val objectName: String?,
-    var fieldErrors: MutableList<FieldErrorResource>? = mutableListOf(),
+    var fieldErrors: MutableList<FieldErrorResource>? = mutableListOf()
 ) {
     fun addFieldError(fieldErrorResource: FieldErrorResource) = fieldErrors?.add(fieldErrorResource)
 
     data class Builder(
         var objectName: String? = "",
-        var fieldErrors: MutableList<FieldErrorResource>? = mutableListOf(),
+        var fieldErrors: MutableList<FieldErrorResource>? = mutableListOf()
     ) {
         fun objectName(objectName: String) = apply { this.objectName = objectName }
         fun fieldErrors(fieldErrors: MutableList<FieldErrorResource>) = apply { this.fieldErrors = fieldErrors }
@@ -26,8 +26,8 @@ data class FormErrorResource(
                     FieldErrorResource(
                         objectName = error.objectName,
                         fieldName = error.field,
-                        errorCodes = listOf(error.codes?.get(error.codes!!.size - 1)),
-                    ),
+                        errorCodes = listOf(error.codes?.get(error.codes!!.size - 1))
+                    )
                 )
             }
             return this

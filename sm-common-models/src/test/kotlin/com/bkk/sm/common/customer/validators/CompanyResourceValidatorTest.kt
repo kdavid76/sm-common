@@ -36,11 +36,11 @@ class CompanyResourceValidatorTest {
                 houseNumber = "86",
                 level = 7,
                 door = 40,
-                locationCode = null,
+                locationCode = null
             ),
             activationTime = LocalDateTime.now(),
             registrationTime = LocalDateTime.now(),
-            lastModificationTime = LocalDateTime.now(),
+            lastModificationTime = LocalDateTime.now()
         )
 
         val errors: Errors = BeanPropertyBindingResult(companyResource, CompanyResource::class.java.name)
@@ -64,11 +64,11 @@ class CompanyResourceValidatorTest {
                 houseNumber = " ",
                 level = null,
                 door = null,
-                locationCode = null,
+                locationCode = null
             ),
             activationTime = LocalDateTime.now(),
             registrationTime = LocalDateTime.now(),
-            lastModificationTime = LocalDateTime.now(),
+            lastModificationTime = LocalDateTime.now()
         )
 
         val errors: Errors = BeanPropertyBindingResult(companyResource, CompanyResource::class.java.name)

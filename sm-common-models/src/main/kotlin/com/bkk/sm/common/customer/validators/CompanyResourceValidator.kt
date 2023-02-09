@@ -20,22 +20,22 @@ class CompanyResourceValidator : Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(
             errors,
             "address.postCode",
-            "errors.company.resource.address.postcode.required",
+            "errors.company.resource.address.postcode.required"
         )
         ValidationUtils.rejectIfEmptyOrWhitespace(
             errors,
             "address.city",
-            "errors.company.resource.address.city.required",
+            "errors.company.resource.address.city.required"
         )
         ValidationUtils.rejectIfEmptyOrWhitespace(
             errors,
             "address.streetName",
-            "errors.company.resource.address.streetName.required",
+            "errors.company.resource.address.streetName.required"
         )
         ValidationUtils.rejectIfEmptyOrWhitespace(
             errors,
             "address.houseNumber",
-            "errors.company.resource.address.houseNumber.required",
+            "errors.company.resource.address.houseNumber.required"
         )
 
         val company = target as CompanyResource
