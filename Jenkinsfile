@@ -48,6 +48,7 @@ pipeline  {
             }
             steps {
                 sh '''
+                    git checkout master
                     mvn release:prepare release:perform release:clean
                 '''
             }
