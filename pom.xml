@@ -76,9 +76,18 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:https://github.com/kdavid76/sm-parent.git</connection>
-		<developerConnection>scm:git:https://github.com/kdavid76/sm-parent.git</developerConnection>
-		<url>https://github.com/kdavid76/sm-common</url>
+		<connection>scm:git:git@github.com:kdavid76/sm-common.git</connection>
+		<developerConnection>scm:git:git@github.com:kdavid76/sm-common.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-stdlib</artifactId>
+			<version>${kotlin.version}</version>
+		</dependency>
+	</dependencies>
+
+
 </project>
