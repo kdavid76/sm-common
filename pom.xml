@@ -12,7 +12,7 @@
 	</parent>
 
 	<artifactId>sm-common</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>sm-common</name>
 	<description>Common components for BKK Sports Management application</description>
 
@@ -89,6 +89,14 @@
 						<configuration>
 							<tagNameFormat>v@{project.version}</tagNameFormat>
 							<autoVersionSubmodules>true</autoVersionSubmodules>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<configuration>
+							<generateBackupPoms>true</generateBackupPoms>
 						</configuration>
 					</plugin>
 				</plugins>
