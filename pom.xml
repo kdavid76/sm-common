@@ -19,9 +19,17 @@
 	<modules>
 		<module>sm-common-models</module>
 	</modules>
+
 	<properties>
 		<development.connection.url>scm:git:git@github.com:kdavid76/sm-common.git</development.connection.url>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-stdlib</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<pluginManagement>
@@ -109,13 +117,5 @@
 		<url>https://github.com/kdavid76/sm-common</url>
 		<tag>HEAD</tag>
 	</scm>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.jetbrains.kotlin</groupId>
-			<artifactId>kotlin-stdlib</artifactId>
-			<version>${kotlin.version}</version>
-		</dependency>
-	</dependencies>
 
 </project>
