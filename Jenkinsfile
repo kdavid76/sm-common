@@ -1,6 +1,10 @@
 
 pipeline  {
     agent { label 'kubeagent' }
+    options {
+        // This is required if you want to clean before build
+        skipDefaultCheckout(true)
+    }
     environment {
         GITHUB_PATH = "https://${env.GITHUB_APIKEY}@github.com/kdavid76/sm-common.git"
     }
@@ -10,30 +14,9 @@ pipeline  {
         git 'default'
     }
     stages {
-    /*
-        stage('Example') {
-            steps {
-                sh '''
-                    env | grep -e PATH -e JAVA_HOME
-                    which java
-                    java -version
-                    mvn -version
-                    git --version
-                    ls -la /home/jenkins/.m2
-                '''
-            }
-        }
-        stage('Environment variables') {
-            steps {
-                sh '''
-                    printenv
-                '''
-            }
-        }
-        */
-
         stage('Checkout') {
             steps {
+                cleanWs()
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: env.BRANCH_NAME]],
@@ -42,21 +25,10 @@ pipeline  {
             }
         }
 
-        stage('Release') {
-            when {
-                branch 'master'
-            }
-            steps {
-                sh '''
-                    git checkout master
-                    mvn release:prepare release:perform release:clean
-                '''
-            }
-        }
-
         stage('Build') {
             steps {
                 sh '''
+                    git checkout master
                     mvn clean package -DskipTests=true
                 '''
             }
@@ -74,17 +46,6 @@ pipeline  {
             steps {
                 sh '''
                     mvn test
-                '''
-            }
-        }
-
-        stage('Deploy to repository') {
-            when {
-                branch 'master'
-            }
-            steps {
-                sh '''
-                    mvn deploy
                 '''
             }
         }
