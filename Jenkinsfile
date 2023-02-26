@@ -28,7 +28,6 @@ pipeline  {
         stage('Build') {
             steps {
                 sh '''
-                    git checkout master
                     mvn clean package -DskipTests=true
                 '''
             }
