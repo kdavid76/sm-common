@@ -18,6 +18,7 @@
 
 	<modules>
 		<module>sm-common-models</module>
+		<module>sm-common-mongo</module>
 	</modules>
 
 	<properties>
