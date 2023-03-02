@@ -8,5 +8,5 @@ data class Address(
     val houseNumber: String,
     val level: Int?,
     val door: Int?,
-    val locationCode: String?
+    val locationCode: String?,
 )

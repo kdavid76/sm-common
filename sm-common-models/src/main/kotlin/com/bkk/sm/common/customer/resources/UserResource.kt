@@ -20,5 +20,5 @@ data class UserResource(
     var activatedTime: Date? = null,
     var accountLocked: Boolean = true,
     var enabled: Boolean = false,
-    var middleName: String? = null
+    var middleName: String? = null,
 )

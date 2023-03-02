@@ -78,7 +78,7 @@ abstract class MongoConfigurationSupportForSM {
         val initialEntitySet: MutableSet<Class<*>> = HashSet()
         if (StringUtils.hasText(basePackage)) {
             val componentProvider = ClassPathScanningCandidateComponentProvider(
-                false
+                false,
             )
             componentProvider.addIncludeFilter(AnnotationTypeFilter(Document::class.java))
             for (candidate in componentProvider.findCandidateComponents(basePackage!!)) {
@@ -86,8 +86,8 @@ abstract class MongoConfigurationSupportForSM {
                     .add(
                         ClassUtils.forName(
                             candidate.beanClassName!!,
-                            MongoConfigurationSupport::class.java.classLoader
-                        )
+                            MongoConfigurationSupport::class.java.classLoader,
+                        ),
                     )
             }
         }
