@@ -1,4 +1,3 @@
-
 pipeline  {
     agent { label 'kubeagent' }
     options {
@@ -46,6 +45,15 @@ pipeline  {
                 sh '''
                     mvn test
                 '''
+            }
+        }
+
+        stage('Deploy snapshot to artifactory') {
+            when {
+                branch "develop"
+            }
+            steps {
+                sh('mvn deploy')
             }
         }
     }

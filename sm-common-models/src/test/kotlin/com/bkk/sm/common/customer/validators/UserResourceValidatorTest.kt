@@ -26,7 +26,7 @@ class UserResourceValidatorTest {
             firstName = " ",
             lastName = " ",
             email = " ",
-            username = " "
+            username = " ",
         )
 
         val errors: Errors = BeanPropertyBindingResult(userResource, UserResource::class.java.name)
@@ -49,7 +49,7 @@ class UserResourceValidatorTest {
             email = "emailemail.com",
             username = "username",
             password = "passwd",
-            roles = mutableListOf()
+            roles = mutableListOf(),
         )
 
         val errors: Errors = BeanPropertyBindingResult(userResource, UserResource::class.java.name)
@@ -70,7 +70,7 @@ class UserResourceValidatorTest {
             email = "email@email.com",
             username = "username",
             password = "Pass?Word_1",
-            roles = mutableListOf(CompanyRole(Roles.ROLE_USER, "bkk"))
+            roles = mutableListOf(CompanyRole(Roles.ROLE_USER, "bkk")),
         )
 
         val errors: Errors = BeanPropertyBindingResult(userResource, UserResource::class.java.name)

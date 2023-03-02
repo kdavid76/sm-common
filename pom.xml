@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.sportmanagement.bkk</groupId>
 		<artifactId>sm-parent</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -18,10 +18,19 @@
 
 	<modules>
 		<module>sm-common-models</module>
+		<module>sm-common-mongo</module>
 	</modules>
+
 	<properties>
 		<development.connection.url>scm:git:git@github.com:kdavid76/sm-common.git</development.connection.url>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-stdlib</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<pluginManagement>
@@ -109,13 +118,5 @@
 		<url>https://github.com/kdavid76/sm-common</url>
 		<tag>HEAD</tag>
 	</scm>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.jetbrains.kotlin</groupId>
-			<artifactId>kotlin-stdlib</artifactId>
-			<version>${kotlin.version}</version>
-		</dependency>
-	</dependencies>
 
 </project>
