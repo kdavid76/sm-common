@@ -112,7 +112,6 @@
 			</build>
 		</profile>
 	</profiles>
-
 	<scm>
 		<developerConnection>${development.connection.url}</developerConnection>
 		<url>https://github.com/kdavid76/sm-common</url>
