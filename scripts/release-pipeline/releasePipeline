@@ -48,7 +48,7 @@ pipeline {
                 stage('Deploy to GitHub') {
                     steps {
                         sh('git add .')
-                        sh("git commit -m 'SM-COMMON: Release ${NEXT_RELEASE}'")
+                        sh("git commit -m '[skip ci] SM-COMMON: Release ${NEXT_RELEASE}'")
                         sh("git tag -a 'v@${NEXT_RELEASE}' -m 'Release ${NEXT_RELEASE}' HEAD")
                         sh('git push --follow-tags')
                     }
@@ -76,7 +76,7 @@ pipeline {
                 stage('Deploy to GitHub') {
                     steps {
                         sh('git add .')
-                        sh("git commit -m 'SM-COMMON: Next snapshot ${NEXT_SNAPSHOT}'")
+                        sh("git commit -m '[skip ci] SM-COMMON: Next snapshot ${NEXT_SNAPSHOT}'")
                         sh('git push')
                     }
                 }
