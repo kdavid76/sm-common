@@ -12,7 +12,7 @@
 	</parent>
 
 	<artifactId>sm-common</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.2-SNAPSHOT</version>
 	<name>sm-common</name>
 	<description>Common components for BKK Sports Management application</description>
 
@@ -112,7 +112,6 @@
 			</build>
 		</profile>
 	</profiles>
-
 	<scm>
 		<developerConnection>${development.connection.url}</developerConnection>
 		<url>https://github.com/kdavid76/sm-common</url>
