@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.sportmanagement.bkk</groupId>
 		<artifactId>sm-parent</artifactId>
-		<version>0.1.0</version>
+		<version>0.1.3-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -19,7 +19,8 @@
 	<modules>
 		<module>sm-common-models</module>
 		<module>sm-common-mongo</module>
-	</modules>
+        <module>sm-common-kafka</module>
+    </modules>
 
 	<properties>
 		<development.connection.url>scm:git:git@github.com:kdavid76/sm-common.git</development.connection.url>
@@ -68,18 +69,33 @@
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-maven-plugin</artifactId>
 				<version>${kotlin.version}</version>
+				<executions>
+					<execution>
+						<id>compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<args>
 						<arg>-Xjsr305=strict</arg>
 					</args>
 					<compilerPlugins>
 						<plugin>spring</plugin>
+						<plugin>kotlinx-serialization</plugin>
 					</compilerPlugins>
 				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.jetbrains.kotlin</groupId>
 						<artifactId>kotlin-maven-allopen</artifactId>
+						<version>${kotlin.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-serialization</artifactId>
 						<version>${kotlin.version}</version>
 					</dependency>
 				</dependencies>

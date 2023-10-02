@@ -5,7 +5,7 @@ import com.bkk.sm.common.customer.resources.CompanyResource
 import com.bkk.sm.common.customer.resources.UserResource
 import com.bkk.sm.common.model.Address
 import com.bkk.sm.common.model.AreaType
-import java.time.LocalDateTime
+import java.util.*
 
 class CommonResourceTestUtils {
 
@@ -55,16 +55,16 @@ class CommonResourceTestUtils {
             email: String,
             taxId: String?,
             bankAccountNumber: String?,
-            activationToken: String?,
-            activationTime: LocalDateTime?,
-            registrationTime: LocalDateTime?,
-            lastModificationTime: LocalDateTime?,
+            activationKey: String?,
+            activationTime: Date?,
+            registrationTime: Date?,
+            lastModificationTime: Date?,
             enabled: Boolean?,
             version: Long,
             address: Address,
         ) = CompanyResource(
             id = id, code = code, name = name, email = email, taxId = taxId,
-            bankAccountNumber = bankAccountNumber, activationToken = activationToken,
+            bankAccountNumber = bankAccountNumber, activationKey = activationKey,
             activationTime = activationTime, registrationTime = registrationTime,
             lastModificationTime = lastModificationTime, enabled = enabled,
             version = version, address = address,

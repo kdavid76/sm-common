@@ -1,7 +1,7 @@
 package com.bkk.sm.common.customer.resources
 
 import com.bkk.sm.common.model.Address
-import java.time.LocalDateTime
+import java.util.*
 
 data class CompanyResource(
     var id: String?,
@@ -12,10 +12,10 @@ data class CompanyResource(
     var taxId: String? = "",
     var bankAccountNumber: String? = "",
     var optionalContactInfo: String? = "",
-    var activationToken: String? = "",
-    var activationTime: LocalDateTime?,
-    var registrationTime: LocalDateTime?,
-    var lastModificationTime: LocalDateTime?,
+    var activationKey: String? = "",
+    var activationTime: Date?,
+    var registrationTime: Date?,
+    var lastModificationTime: Date?,
     var enabled: Boolean? = false,
     var version: Long = 0,
 )
