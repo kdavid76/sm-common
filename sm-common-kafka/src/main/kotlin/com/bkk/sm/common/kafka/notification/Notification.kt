@@ -1,12 +1,13 @@
 package com.bkk.sm.common.kafka.notification
 
-import com.github.avrokotlin.avro4k.serializer.UUIDSerializer
-import kotlinx.serialization.Serializable
-import java.util.UUID
+import java.util.*
 
-@Serializable
-class Notification(
-    @Serializable(with = UUIDSerializer::class) val id: UUID,
+// @OptIn(ExperimentalSerializationApi::class)
+// @Serializer(forClass = NotificationChannelSerializer::class)
+data class Notification(
+    // @Serializable(with = UUIDSerializer::class)
+    val id: UUID,
+    // @Serializable(with = NotificationChannelSerializer::class)
     val channel: NotificationChannel,
     val type: NotificationType,
     val parameters: Map<String, String>,

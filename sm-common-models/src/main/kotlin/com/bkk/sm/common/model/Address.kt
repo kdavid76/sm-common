@@ -6,7 +6,7 @@ data class Address(
     val streetName: String,
     val areaType: AreaType,
     val houseNumber: String,
-    val level: Int?,
-    val door: Int?,
-    val locationCode: String?,
+    val level: Int? = null,
+    val door: Int? = null,
+    val locationCode: String? = null,
 )

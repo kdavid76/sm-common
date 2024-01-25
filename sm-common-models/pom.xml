@@ -9,7 +9,6 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <version>0.1.4-SNAPSHOT</version>
     <description>Common model objects for BKK Sports Management application</description>
 
     <artifactId>sm-common-models</artifactId>

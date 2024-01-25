@@ -10,7 +10,6 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sm-common-mongo</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
     <description>Common MongoDB classes for BKK Sports Management application</description>
 
     <properties>
