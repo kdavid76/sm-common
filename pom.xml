@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.sportmanagement.bkk</groupId>
         <artifactId>sm-parent</artifactId>
-        <version>0.1.4-SNAPSHOT</version>
+        <version>0.1.6-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -102,6 +102,14 @@
                         <version>${kotlin.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
