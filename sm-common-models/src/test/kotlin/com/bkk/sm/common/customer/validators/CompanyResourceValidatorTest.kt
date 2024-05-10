@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.validation.BeanPropertyBindingResult
 import org.springframework.validation.Errors
-import java.time.LocalDateTime
+import java.time.Instant
+import java.util.*
 
 @ActiveProfiles("test")
 class CompanyResourceValidatorTest {
@@ -38,9 +39,9 @@ class CompanyResourceValidatorTest {
                 door = 40,
                 locationCode = null,
             ),
-            activationTime = LocalDateTime.now(),
-            registrationTime = LocalDateTime.now(),
-            lastModificationTime = LocalDateTime.now(),
+            activationTime = Date.from(Instant.now()),
+            registrationTime = Date.from(Instant.now()),
+            lastModificationTime = Date.from(Instant.now()),
         )
 
         val errors: Errors = BeanPropertyBindingResult(companyResource, CompanyResource::class.java.name)
@@ -66,9 +67,9 @@ class CompanyResourceValidatorTest {
                 door = null,
                 locationCode = null,
             ),
-            activationTime = LocalDateTime.now(),
-            registrationTime = LocalDateTime.now(),
-            lastModificationTime = LocalDateTime.now(),
+            activationTime = Date.from(Instant.now()),
+            registrationTime = Date.from(Instant.now()),
+            lastModificationTime = Date.from(Instant.now()),
         )
 
         val errors: Errors = BeanPropertyBindingResult(companyResource, CompanyResource::class.java.name)

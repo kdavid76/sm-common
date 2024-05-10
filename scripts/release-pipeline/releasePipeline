@@ -43,21 +43,17 @@ pipeline {
                 sh('mvn clean package')
             }
         }
-        stage('Deploy release') {
-            parallel {
-                stage('Deploy to GitHub') {
-                    steps {
-                        sh('git add .')
-                        sh("git commit -m '[skip ci] SM-COMMON: Release ${NEXT_RELEASE}'")
-                        sh("git tag -a 'v@${NEXT_RELEASE}' -m 'Release ${NEXT_RELEASE}' HEAD")
-                        sh('git push --follow-tags')
-                    }
-                }
-                stage('Deploy to artifactory') {
-                    steps {
-                        sh('mvn deploy')
-                    }
-                }
+        stage('Push Tag to GitHub') {
+            steps {
+                sh('git add .')
+                sh("git commit -m '[skip ci] SM-COMMON: Release ${NEXT_RELEASE}'")
+                sh("git tag -a 'v@${NEXT_RELEASE}' -m 'Release ${NEXT_RELEASE}' HEAD")
+                sh('git push --follow-tags')
+            }
+        }
+        stage('Push to artifactory') {
+            steps {
+                sh('mvn deploy')
             }
         }
         stage('Build next snapshot') {
@@ -71,7 +67,7 @@ pipeline {
                 sh('mvn clean package')
             }
         }
-        stage('Deploy snapshot') {
+        stage('Push snapshot to GitHub') {
             parallel {
                 stage('Deploy to GitHub') {
                     steps {

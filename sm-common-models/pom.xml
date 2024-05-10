@@ -9,7 +9,6 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <version>0.1.2-SNAPSHOT</version>
     <description>Common model objects for BKK Sports Management application</description>
 
     <artifactId>sm-common-models</artifactId>
@@ -133,6 +132,16 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
