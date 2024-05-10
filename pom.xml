@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.sportmanagement.bkk</groupId>
         <artifactId>sm-parent</artifactId>
-        <version>0.1.6-SNAPSHOT</version>
+        <version>0.1.10</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -36,6 +36,16 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>github-repo</id>
+            <url>https://raw.githubusercontent.com/kdavid76/maven-repo/main</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -48,7 +58,7 @@
                             <id>attach-sources</id>
                             <phase>package</phase>
                             <goals>
-                                <goal>jar</goal>
+                                <goal>jar-no-fork</goal>
                                 <goal>test-jar</goal>
                             </goals>
                             <configuration>
