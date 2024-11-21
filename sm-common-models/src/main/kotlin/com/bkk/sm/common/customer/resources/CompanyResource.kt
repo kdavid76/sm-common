@@ -1,8 +1,7 @@
 package com.bkk.sm.common.customer.resources
 
 import com.bkk.sm.common.model.Address
-import java.time.Instant
-import java.util.*
+import java.time.ZonedDateTime
 
 data class CompanyResource(
     var id: String? = null,
@@ -14,9 +13,9 @@ data class CompanyResource(
     var bankAccountNumber: String? = "",
     var optionalContactInfo: String? = "",
     var activationKey: String? = "",
-    var activationTime: Date? = null,
-    var registrationTime: Date? = Date.from(Instant.now()),
-    var lastModificationTime: Date? = Date.from(Instant.now()),
+    var activationTime: ZonedDateTime? = null,
+    var registrationTime: ZonedDateTime? = ZonedDateTime.now(),
+    var lastModificationTime: ZonedDateTime? = ZonedDateTime.now(),
     var enabled: Boolean? = false,
     var version: Long = 0,
 )

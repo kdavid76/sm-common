@@ -21,13 +21,14 @@ class UserResourceValidatorTest {
 
     @Test
     fun `Rejecting whitespace errors`() {
-        val userResource = UserResource(
-            id = "123456",
-            firstName = " ",
-            lastName = " ",
-            email = " ",
-            username = " ",
-        )
+        val userResource =
+            UserResource(
+                id = "123456",
+                firstName = " ",
+                lastName = " ",
+                email = " ",
+                username = " ",
+            )
 
         val errors: Errors = BeanPropertyBindingResult(userResource, UserResource::class.java.name)
 
@@ -42,15 +43,16 @@ class UserResourceValidatorTest {
 
     @Test
     fun `Rejecting email and password format errors`() {
-        val userResource = UserResource(
-            id = "123456",
-            firstName = "firstName",
-            lastName = "lastName",
-            email = "emailemail.com",
-            username = "username",
-            password = "passwd",
-            roles = mutableListOf(),
-        )
+        val userResource =
+            UserResource(
+                id = "123456",
+                firstName = "firstName",
+                lastName = "lastName",
+                email = "emailemail.com",
+                username = "username",
+                password = "passwd",
+                roles = mutableListOf(),
+            )
 
         val errors: Errors = BeanPropertyBindingResult(userResource, UserResource::class.java.name)
 
@@ -63,15 +65,16 @@ class UserResourceValidatorTest {
 
     @Test
     fun `Verifying valid resource`() {
-        val userResource = UserResource(
-            id = "123456",
-            firstName = "firstName",
-            lastName = "lastName",
-            email = "email@email.com",
-            username = "username",
-            password = "Pass?Word_1",
-            roles = mutableListOf(CompanyRole(Roles.ROLE_USER, "bkk")),
-        )
+        val userResource =
+            UserResource(
+                id = "123456",
+                firstName = "firstName",
+                lastName = "lastName",
+                email = "email@email.com",
+                username = "username",
+                password = "Pass?Word_1",
+                roles = mutableListOf(CompanyRole(Roles.ROLE_USER, "bkk")),
+            )
 
         val errors: Errors = BeanPropertyBindingResult(userResource, UserResource::class.java.name)
 

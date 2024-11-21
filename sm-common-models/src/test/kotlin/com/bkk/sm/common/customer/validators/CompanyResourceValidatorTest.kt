@@ -8,12 +8,10 @@ import org.junit.jupiter.api.Test
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.validation.BeanPropertyBindingResult
 import org.springframework.validation.Errors
-import java.time.Instant
-import java.util.*
+import java.time.ZonedDateTime
 
 @ActiveProfiles("test")
 class CompanyResourceValidatorTest {
-
     private val validator = CompanyResourceValidator()
 
     @Test
@@ -24,25 +22,27 @@ class CompanyResourceValidatorTest {
 
     @Test
     fun `Verifying valid resource`() {
-        val companyResource = CompanyResource(
-            id = "123456789",
-            name = "Beszterce KK",
-            code = "bkk",
-            email = "bkk@gmail.com",
-            address = Address(
-                postCode = 3100,
-                city = "Salgotarjan",
-                areaType = AreaType.KORUT,
-                streetName = "Medves",
-                houseNumber = "86",
-                level = 7,
-                door = 40,
-                locationCode = null,
-            ),
-            activationTime = Date.from(Instant.now()),
-            registrationTime = Date.from(Instant.now()),
-            lastModificationTime = Date.from(Instant.now()),
-        )
+        val companyResource =
+            CompanyResource(
+                id = "123456789",
+                name = "Beszterce KK",
+                code = "bkk",
+                email = "bkk@gmail.com",
+                address =
+                    Address(
+                        postCode = 3100,
+                        city = "Salgotarjan",
+                        areaType = AreaType.KORUT,
+                        streetName = "Medves",
+                        houseNumber = "86",
+                        level = 7,
+                        door = 40,
+                        locationCode = null,
+                    ),
+                activationTime = ZonedDateTime.now(),
+                registrationTime = ZonedDateTime.now(),
+                lastModificationTime = ZonedDateTime.now(),
+            )
 
         val errors: Errors = BeanPropertyBindingResult(companyResource, CompanyResource::class.java.name)
 
@@ -52,25 +52,27 @@ class CompanyResourceValidatorTest {
 
     @Test
     fun `Verifying invalid resource`() {
-        val companyResource = CompanyResource(
-            id = "123456789",
-            name = " ",
-            code = " ",
-            email = "bkkgmail.com",
-            address = Address(
-                postCode = 0,
-                city = " ",
-                areaType = AreaType.KORUT,
-                streetName = " ",
-                houseNumber = " ",
-                level = null,
-                door = null,
-                locationCode = null,
-            ),
-            activationTime = Date.from(Instant.now()),
-            registrationTime = Date.from(Instant.now()),
-            lastModificationTime = Date.from(Instant.now()),
-        )
+        val companyResource =
+            CompanyResource(
+                id = "123456789",
+                name = " ",
+                code = " ",
+                email = "bkkgmail.com",
+                address =
+                    Address(
+                        postCode = 0,
+                        city = " ",
+                        areaType = AreaType.KORUT,
+                        streetName = " ",
+                        houseNumber = " ",
+                        level = null,
+                        door = null,
+                        locationCode = null,
+                    ),
+                activationTime = ZonedDateTime.now(),
+                registrationTime = ZonedDateTime.now(),
+                lastModificationTime = ZonedDateTime.now(),
+            )
 
         val errors: Errors = BeanPropertyBindingResult(companyResource, CompanyResource::class.java.name)
 

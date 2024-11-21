@@ -14,7 +14,6 @@ import org.springframework.util.ClassUtils
 import org.springframework.util.StringUtils
 
 abstract class MongoConfigurationSupportForSM {
-
     /**
      * Return the name of the database to connect to.
      *
@@ -77,9 +76,10 @@ abstract class MongoConfigurationSupportForSM {
         }
         val initialEntitySet: MutableSet<Class<*>> = HashSet()
         if (StringUtils.hasText(basePackage)) {
-            val componentProvider = ClassPathScanningCandidateComponentProvider(
-                false,
-            )
+            val componentProvider =
+                ClassPathScanningCandidateComponentProvider(
+                    false,
+                )
             componentProvider.addIncludeFilter(AnnotationTypeFilter(Document::class.java))
             for (candidate in componentProvider.findCandidateComponents(basePackage!!)) {
                 initialEntitySet

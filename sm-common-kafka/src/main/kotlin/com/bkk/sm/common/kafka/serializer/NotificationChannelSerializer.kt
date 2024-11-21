@@ -13,7 +13,6 @@ import kotlinx.serialization.modules.SerializersModule
 import org.apache.avro.Schema
 
 class NotificationChannelSerializer : AvroSerializer<NotificationChannel>() {
-
     @OptIn(ExperimentalSerializationApi::class)
     override val descriptor: SerialDescriptor =
         object : AvroDescriptor(NotificationChannel::class, PrimitiveKind.STRING) {
@@ -24,11 +23,18 @@ class NotificationChannelSerializer : AvroSerializer<NotificationChannel>() {
             ): Schema = Schema.create(Schema.Type.STRING)
         }
 
-    override fun decodeAvroValue(schema: Schema, decoder: ExtendedDecoder): NotificationChannel {
+    override fun decodeAvroValue(
+        schema: Schema,
+        decoder: ExtendedDecoder,
+    ): NotificationChannel {
         return NotificationChannel.valueOf(decoder.decodeString())
     }
 
-    override fun encodeAvroValue(schema: Schema, encoder: ExtendedEncoder, obj: NotificationChannel) {
+    override fun encodeAvroValue(
+        schema: Schema,
+        encoder: ExtendedEncoder,
+        obj: NotificationChannel,
+    ) {
         encoder.encodeString(obj.name)
     }
 }

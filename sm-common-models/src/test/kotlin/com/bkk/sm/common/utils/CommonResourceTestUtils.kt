@@ -5,10 +5,9 @@ import com.bkk.sm.common.customer.resources.CompanyResource
 import com.bkk.sm.common.customer.resources.UserResource
 import com.bkk.sm.common.model.Address
 import com.bkk.sm.common.model.AreaType
-import java.util.*
+import java.time.ZonedDateTime
 
 class CommonResourceTestUtils {
-
     companion object {
         fun createUserResource(
             id: String,
@@ -56,18 +55,26 @@ class CommonResourceTestUtils {
             taxId: String?,
             bankAccountNumber: String?,
             activationKey: String?,
-            activationTime: Date?,
-            registrationTime: Date?,
-            lastModificationTime: Date?,
+            activationTime: ZonedDateTime?,
+            registrationTime: ZonedDateTime?,
+            lastModificationTime: ZonedDateTime?,
             enabled: Boolean?,
             version: Long,
             address: Address,
         ) = CompanyResource(
-            id = id, code = code, name = name, email = email, taxId = taxId,
-            bankAccountNumber = bankAccountNumber, activationKey = activationKey,
-            activationTime = activationTime, registrationTime = registrationTime,
-            lastModificationTime = lastModificationTime, enabled = enabled,
-            version = version, address = address,
+            id = id,
+            code = code,
+            name = name,
+            email = email,
+            taxId = taxId,
+            bankAccountNumber = bankAccountNumber,
+            activationKey = activationKey,
+            activationTime = activationTime,
+            registrationTime = registrationTime,
+            lastModificationTime = lastModificationTime,
+            enabled = enabled,
+            version = version,
+            address = address,
         )
     }
 }

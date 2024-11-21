@@ -9,18 +9,19 @@ import java.util.regex.Pattern
 
 @Component
 class UserResourceValidator : Validator {
-
     companion object {
         val PASSWORD_PATTERN: Pattern =
             Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*#?&_\\-+=\\(\\)§:,;])[a-zA-Z\\d@\$!%*#?&_\\-+=\\(\\)§:,;]{8,}\$")
         val EMAIL_PATTERN: Pattern = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,5}\$")
     }
 
-    override fun supports(clazz: Class<*>): Boolean {
-        return UserResource::class.java.isAssignableFrom(clazz)
-    }
+    override fun supports(clazz: Class<*>): Boolean = UserResource::class.java.isAssignableFrom(clazz)
 
-    override fun validate(target: Any, errors: Errors) {
+    @Suppress("ktlint:standard:no-consecutive-comments")
+    override fun validate(
+        target: Any,
+        errors: Errors,
+    ) {
         val user = target as UserResource
 
         // Validate mandatory String fields

@@ -14,11 +14,14 @@ data class FormErrorResource(
         var fieldErrors: MutableList<FieldErrorResource>? = mutableListOf(),
     ) {
         fun objectName(objectName: String) = apply { this.objectName = objectName }
+
         fun fieldErrors(fieldErrors: MutableList<FieldErrorResource>) = apply { this.fieldErrors = fieldErrors }
+
         fun addFieldError(fieldErrorResource: FieldErrorResource): Builder {
             fieldErrors?.add(fieldErrorResource)
             return this
         }
+
         fun addFieldErrors(errors: Errors): Builder {
             errors.allErrors.forEach {
                 val error = it as FieldError
@@ -32,6 +35,7 @@ data class FormErrorResource(
             }
             return this
         }
+
         fun build() = FormErrorResource(objectName, fieldErrors)
     }
 }

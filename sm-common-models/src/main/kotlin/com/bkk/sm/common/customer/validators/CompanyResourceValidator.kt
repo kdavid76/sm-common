@@ -8,12 +8,12 @@ import org.springframework.validation.Validator
 
 @Component
 class CompanyResourceValidator : Validator {
+    override fun supports(clazz: Class<*>): Boolean = CompanyResource::class.java.isAssignableFrom(clazz)
 
-    override fun supports(clazz: Class<*>): Boolean {
-        return CompanyResource::class.java.isAssignableFrom(clazz)
-    }
-
-    override fun validate(target: Any, errors: Errors) {
+    override fun validate(
+        target: Any,
+        errors: Errors,
+    ) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "code", "errors.company.resource.code.required")
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "errors.company.resource.name.required")
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "errors.company.resource.email.required")

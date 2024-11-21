@@ -1,6 +1,6 @@
 package com.bkk.sm.common.kafka.notification
 
-import java.util.*
+import java.util.UUID
 
 // @OptIn(ExperimentalSerializationApi::class)
 // @Serializer(forClass = NotificationChannelSerializer::class)

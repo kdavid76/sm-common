@@ -1,3 +1,5 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.bkk.sm.common.kafka.audit
 
 import java.time.ZonedDateTime
