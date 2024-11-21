@@ -47,7 +47,7 @@ abstract class MongoConfigurationSupportForSM {
 
     /**
      * Scans the mapping base package for classes annotated with [Document]. By default, it scans for entities in
-     * all packages returned by [.getMappingBasePackages].
+     * all packages returned by [getMappingBasePackages].
      *
      * @see .getMappingBasePackages
      * @return

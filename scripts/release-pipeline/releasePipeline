@@ -68,15 +68,10 @@ pipeline {
             }
         }
         stage('Push snapshot to GitHub') {
-            parallel {
-                stage('Deploy to GitHub') {
-                    steps {
-                        sh('git add .')
-                        sh("git commit -m '[skip ci] SM-COMMON: Next snapshot ${NEXT_SNAPSHOT}'")
-                        sh('git push')
-                    }
-                }
-
+            steps {
+                sh('git add .')
+                sh("git commit -m '[skip ci] SM-COMMON: Next snapshot ${NEXT_SNAPSHOT}'")
+                sh('git push')
             }
         }
     }
